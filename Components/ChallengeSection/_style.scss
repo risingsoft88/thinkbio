@@ -1,0 +1,266 @@
+.science-challenge {
+  background-color: #faf9f8;
+  overflow: hidden;
+  padding: 60px 40px 80px;
+}
+
+.science-challenge__title {
+  text-align: center;
+
+  h2 {
+    color: $color-black-1;
+    font-size: 40px;
+    line-height: 1.25;
+  }
+}
+
+.science-challenge__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 950px;
+}
+
+.science-challenge__content-col {
+  h3 {
+    color: $color-black-1;
+    font-size: 44px;
+    line-height: 1.32;
+    position: relative;
+
+    span {
+      left: -48px;
+      position: absolute;
+      top: 0;
+    }
+  }
+
+  p {
+    color: $color-gray;
+    font-size: 18px;
+    font-weight: $font-weight-light;
+    line-height: 1.67;
+    margin-top: 18px;
+  }
+}
+
+.science-challenge__content-col-1 {
+  width: 470px;
+}
+
+.science-challenge__content-col-2 {
+  width: 430px;
+}
+
+.science-challenge__content-col-3 {
+  width: 430px;
+}
+
+.science-challenge__content-col-4 {
+  padding-top: 20px;
+  width: 430px;
+}
+
+.science-challenge__img-col {
+  position: relative;
+}
+
+.science-challenge__img-col-2 {
+  width: 380px;
+}
+
+.science-challenge__img-col-4 {
+  width: 430px;
+}
+
+.science-challenge__shape-1 {
+  bottom: 108px;
+  display: flex;
+  position: absolute;
+  right: -45px;
+}
+
+.science-challenge__row-wrapper {
+  position: relative;
+}
+
+.science-challenge__row-wrapper-1 {
+  margin-top: 140px;
+}
+
+.science-challenge__row-wrapper-2 {
+  margin-top: 50px;
+}
+
+.science-challenge__shape-2 {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 10px;
+}
+
+.science-challenge__row-wrapper-3 {
+  margin-top: 100px;
+  position: relative;
+}
+
+.science-challenge__shape-3 {
+  display: flex;
+  position: absolute;
+  right: -45px;
+  top: -37px;
+}
+
+.science-challenge__row-wrapper-4 {
+  margin-top: 45px;
+}
+
+.science-challenge__shape-4 {
+  display: flex;
+  left: 0;
+  position: absolute;
+  top: 13px;
+}
+
+.science-challenge__mobile-img-1 {
+  display: none;
+  position: absolute;
+  right: -40px;
+  top: 0;
+}
+
+.science-challenge__mobile-img-2 {
+  display: none;
+  position: absolute;
+  right: -40px;
+  top: 20px;
+}
+
+.science-challenge__mobile-img-3 {
+  display: none;
+  position: absolute;
+  right: -40px;
+  top: 45px;
+}
+
+.science-challenge__mobile-img-4 {
+  display: none;
+  position: absolute;
+  right: -40px;
+  top: 45px;
+}
+
+@media(max-width: 1400px) {
+  .science-challenge__shape-1 {
+    right: -200px;
+  }
+}
+
+@media(max-width: $breakpoint-tablet-start) {
+  .science-challenge__content-col {
+    h3 {
+      span {
+        left: 0;
+        top: -48px;
+      }
+    }
+  }
+}
+
+@media(max-width : $breakpoint-mobile-start) {
+  .science-challenge {
+    padding: 68px 40px 46px;
+  }
+
+  .science-challenge__title {
+    h2 {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+  }
+
+  .science-challenge__content-col {
+    h3 {
+      font-size: 24px;
+      line-height: 1.5;
+
+      span {
+        top: -36px;
+      }
+
+      br {
+        display: none;
+      }
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.71;
+      margin-top: 12px;
+    }
+  }
+
+  .science-challenge__row-wrapper-1 {
+    margin-top: 0;
+    padding-top: 230px;
+    position: relative;
+  }
+  
+  .science-challenge__row-wrapper-2 {
+    margin-top: 0;
+    padding-top: 200px;
+    position: relative;
+  }
+  
+  .science-challenge__row-wrapper-3 {
+    margin-top: 0;
+    padding-top: 175px;
+  }
+  
+  .science-challenge__row-wrapper-4 {
+    margin-top: 0;
+    padding-top: 235px;
+    position: relative;
+  }
+
+  .science-challenge__row {
+    display: block;
+  }
+
+  .science-challenge__content-col {
+    padding: 0;
+    width: 100%;
+  }
+
+  .science-challenge__img-col {
+    display: none;
+  }
+  
+  .science-challenge__shape-3 {
+    display: none;
+  }
+
+  .science-challenge__mobile-img-1 {
+    display: flex;
+  }
+  
+  .science-challenge__mobile-img-2 {
+    display: flex;
+  }
+  
+  .science-challenge__mobile-img-3 {
+    display: flex;
+  }
+
+  .science-challenge__mobile-img-4 {
+    display: flex;
+  }
+
+  .science-challenge__shape-1 {
+    display: none;
+  }
+
+  .science-challenge__shape-3 {
+    display: none;
+  }
+}

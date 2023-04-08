@@ -1,0 +1,25 @@
+<section id="platform-advantages" class="science-info">
+    <div class="science-info__container">
+        <div class="science-info__title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="science-info__row">
+            {% for item in info_list %}
+                <div class="science-info__col">
+                    <div class="science-info__img">
+                        <img
+                            class="lazyload"
+                            data-src="{{ item.image.src }}"
+                            data-sizes="auto"
+                            alt="{{ item.image.alt|e }}"
+                        />
+                    </div>
+                    <div class="science-info__content">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

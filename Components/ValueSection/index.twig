@@ -1,0 +1,52 @@
+<section class="value">
+    <div class="value__container">
+        <div class="value__title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="value__row">
+            <div class="value__col">
+                <div class="value__img">
+                    <img
+                        class="lazyload"
+                        data-src="{{ image_1.src }}"
+                        data-sizes="auto"
+                        alt="{{ image_1.alt|e }}"
+                    />
+                </div>
+                <div class="value__content">
+                    <h3>{{ title_1 }}</h3>
+                    <p>{{ info_1 }}</p>
+                </div>
+            </div>
+            <div class="value__col">
+                <div class="value__img">
+                    <img
+                        class="lazyload"
+                        data-src="{{ image_2.src }}"
+                        data-sizes="auto"
+                        alt="{{ image_2.alt|e }}"
+                    />
+                </div>
+                <div class="value__content">
+                    <h3>{{ title_2 }}</h3>
+                    <p>{{ info_2 }}</p>
+                </div>
+            </div>
+            <div class="value__col">
+                <div class="value__img">
+                    <img
+                        class="lazyload"
+                        data-src="{{ image_3.src }}"
+                        data-sizes="auto"
+                        alt="{{ image_3.alt|e }}"
+                    />
+                </div>
+                <div class="value__content">
+                    <h3>{{ title_3 }}</h3>
+                    <p>{{ info_3 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="value__footer">{{ footer_info }}</div>
+    </div>
+</section>

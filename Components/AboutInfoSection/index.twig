@@ -1,0 +1,30 @@
+<section id="our-values" class="about-info">
+    <div class="about-info__mask">
+        <svg width="259" height="389" viewBox="0 0 259 389" fill="none"><path d="M259.63 130L195.5 129C195.5 92.5664 224.671 64 260 64V130H259.63Z" fill="#E6DDBF"/><path d="M261 0.36994L261 64C224.566 64 195 35.3295 195 0L261 2.88495e-06L261 0.36994Z" fill="#E6DDBF"/><path fill-rule="evenodd" clip-rule="evenodd" d="M195.709 255C195.709 212.5 226.617 194 261 194V129H195.5C195.5 164.881 166.157 194 130 194C94.6705 194 66 223.566 66 260C66 295.605 36.1575 324.5 0 324.5V389H65.5C65.5 353.395 94.8425 324.5 131 324.5C166.973 323.972 195.419 297.5 195.709 260.5C195.709 258.399 195.709 257.231 195.709 255Z" fill="#5DD597"/></svg>
+    </div>
+    <div class="about-info__container">
+        {% if content %}
+            <div class="about-info__hero">
+                <p>{{ content }}</p>
+            </div>
+        {% endif %}
+        <div class="about-info__row">
+            {% for info in info_list %}
+                <div class="about-info__col">
+                    <div class="about-info__img">
+                        <img
+                            class="lazyload"
+                            data-src="{{ info.image.src }}"
+                            data-sizes="auto"
+                            alt="{{ info.image.alt|e }}"
+                        />
+                    </div>
+                    <div class="about-info__content">
+                        <h3>{{ info.title }}</h3>
+                        <p>{{ info.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

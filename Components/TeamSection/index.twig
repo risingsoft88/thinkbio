@@ -1,0 +1,124 @@
+<section id="our-team" class="team">
+    <div class="container">
+        <div class="team__title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="thinkbio__dropdown team-department-dropdown">
+            <div class="thinkbio__dropdown-label">All</div>
+            <div class="thinkbio__dropdown-list">
+                {% for item in departments %}
+                    <div class="thinkbio__dropdown-list-item" data-id="{{ item.id }}">{{ item.title }}</div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="team__filter-row">
+            <div class="team__filter-col">
+                <span class="selected" data-id="0">All</span>
+            </div>
+            {% for item in departments %}
+                <div class="team__filter-col">
+                    <span data-id="{{ item.id }}">{{ item.title }}</span>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="team__row">
+            {% for index, item in team_list %}
+                <div class="team__col">
+                    <div class="js-team__col-inner team__col-inner" data-team-id="{{ item.team.id }}">
+                        <div class="team__avatar">
+                            <div class="team__avatar-inner">
+                                <img
+                                    class="lazyload"
+                                    src="{{ placeholderImage(item.team.meta('avatar_round').width / 2, item.team.meta('avatar_round').height / 2) }}"
+                                    data-src="{{ item.team.meta('avatar_round').src|resizeDynamic(item.team.meta('avatar_round').width / 2, item.team.meta('avatar_round').height / 2) }}"
+                                    data-srcset="{{ item.team.meta('avatar_round').src|resizeDynamic(item.team.meta('avatar_round').width / 2, item.team.meta('avatar_round').height / 2) }} 1x, {{ item.team.meta('avatar_round').src|resizeDynamic(item.team.meta('avatar_round').width, item.team.meta('avatar_round').height) }} 2x"
+                                    data-sizes="auto"
+                                    alt="{{ item.team.meta('avatar_round').alt|e }}"
+                                />
+                            </div>
+                            {% if index == 0 %}
+                                <div class="team__avatar-mask-1">
+                                    <svg width="208" height="346" viewBox="0 0 208 346" fill="none"><path d="M207.5 276.7C169.3 276.7 138.3 245.7 138.3 207.5H69V276.7C107.2 276.7 138.2 307.7 138.2 345.9H207.4V276.7H207.5Z" fill="#F7E3C7"/><path d="M68.8 0H0C0 38.2 31 69.2 69.2 69.2V0H68.8Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M69 69.4V138.2C107.2 138.2 138.2 107.2 138.2 69H69V69.4Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M69.4 207.4H138.2C138.2 169.2 107.2 138.2 69 138.2V207.4H69.4Z" fill="#EFA33B" fill-opacity="0.25"/></svg>
+                                </div>
+                                <div class="team__avatar-mask-1--mobile">
+                                    <svg width="133" height="222" viewBox="0 0 133 222" fill="none"><path d="M132.174 177.587C107.657 177.587 87.7614 157.691 87.7614 133.174H43.2844V177.587C67.8013 177.587 87.6973 197.483 87.6973 222H132.11V177.587H132.174Z" fill="#F7E3C7"/><path d="M43.1561 0H-1C-1 24.5169 18.8959 44.4128 43.4128 44.4128V0H43.1561Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M43.2844 44.5411V88.6973C67.8013 88.6973 87.6973 68.8013 87.6973 44.2844H43.2844V44.5411Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M43.5411 133.11H87.6973C87.6973 108.593 67.8013 88.6973 43.2844 88.6973V133.11H43.5411Z" fill="#EFA33B" fill-opacity="0.25"/></svg>
+                                </div>
+                            {% endif %}
+                            {% if index == 7 %}
+                                <div class="team__avatar-mask-3">
+                                    <svg width="208" height="208" viewBox="0 0 208 208" fill="none"><path d="M69.4997 69.1996C69.4997 107.4 38.4997 138.4 0.299704 138.4L0.299698 207.6L69.4997 207.6C69.4997 169.4 100.5 138.4 138.7 138.4L138.7 69.1996L69.4997 69.1996Z" fill="#F7E3C7"/><path d="M139.1 69.2001L207.9 69.2001C207.9 31.0001 176.9 5.83251e-05 138.7 5.49855e-05L138.7 69.2001L139.1 69.2001Z" fill="#F7E3C7"/><path d="M138.7 68.8001L138.7 6.10352e-05C100.5 5.76956e-05 69.4997 31.0001 69.4997 69.2001L138.7 69.2001L138.7 68.8001Z" fill="#F7E3C7"/><path d="M138.7 69.6995L138.7 138.5C176.9 138.4 207.9 107.5 207.9 69.1995L138.7 69.1995L138.7 69.6995Z" fill="#F7E3C7"/></svg>
+                                </div>
+                            {% endif %}
+                            {% if index == 9 %}
+                                <div class="team__avatar-mask-2">
+                                    <svg width="208" height="208" viewBox="0 0 208 208" fill="none"><path d="M69.4997 69.1996C69.4997 107.4 38.4997 138.4 0.299704 138.4L0.299698 207.6L69.4997 207.6C69.4997 169.4 100.5 138.4 138.7 138.4L138.7 69.1996L69.4997 69.1996Z" fill="#F7E3C7"/><path d="M139.1 69.2001L207.9 69.2001C207.9 31.0001 176.9 5.83251e-05 138.7 5.49855e-05L138.7 69.2001L139.1 69.2001Z" fill="#F7E3C7"/><path d="M138.7 68.8001L138.7 6.10352e-05C100.5 5.76956e-05 69.4997 31.0001 69.4997 69.2001L138.7 69.2001L138.7 68.8001Z" fill="#F7E3C7"/><path d="M138.7 69.6995L138.7 138.5C176.9 138.4 207.9 107.5 207.9 69.1995L138.7 69.1995L138.7 69.6995Z" fill="#F7E3C7"/></svg>
+                                </div>
+                            {% endif %}
+                            {% if index + 1 == team_list|length %}
+                                <div class="team__avatar-2__shape-1">
+                                    <svg width="255" height="128" viewBox="0 0 255 128" fill="none"><path d="M85 128C85 104.539 66.185 85.5 43 85.5V43H85C85 66.461 103.815 85.5 127 85.5V128H85Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M213 85.5C189.263 85.5 170 104.539 170 128H127V85.5C150.737 85.5 170 66.461 170 43H213V85.5Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M43 43.2428V85C19.263 85 0 66.185 0 43H43V43.2428Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M42.7514 43H0C0 19.263 19.263 0 43 0V43H42.7514Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M213 127.751L213 85C236.185 85 255 104.263 255 128L213 128L213 127.751Z" fill="#EFA33B" fill-opacity="0.25"/></svg>
+                                </div>
+                            {% endif %}
+                        </div>
+                        <div class="team__info">
+                            <h3>{{ item.team.title }}</h3>
+                            <p>{{ item.team.meta('role') }}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {# <div id="our-investors" class="team__title-2">
+            <h2>{{ title_2 }}</h2>
+            <p>{{ content_2 }}</p>
+        </div>
+        <div class="team__wrapper-2">
+            <div class="team__row-2">
+                {% for index, item in advisor_list %}
+                    <div class="team__col-2">
+                        <a href="{{ item.team.meta('linkedin_url') }}">
+                            <div class="team__col-inner-2">
+                                <div class="team__avatar-2">
+                                    <div class="team__avatar-inner-2">
+                                        <img
+                                            class="lazyload"
+                                            src="{{ placeholderImage(item.team.meta('avatar').width / 2, item.team.meta('avatar').height / 2) }}"
+                                            data-src="{{ item.team.meta('avatar').src|resizeDynamic(item.team.meta('avatar').width / 2, item.team.meta('avatar').height / 2) }}"
+                                            data-srcset="{{ item.team.meta('avatar').src|resizeDynamic(item.team.meta('avatar').width / 2, item.team.meta('avatar').height / 2) }} 1x, {{ item.team.meta('avatar').src|resizeDynamic(item.team.meta('avatar').width, item.team.meta('avatar').height) }} 2x"
+                                            data-sizes="auto"
+                                            alt="{{ item.team.meta('avatar').alt|e }}"
+                                        />
+                                    </div>
+                                    {% if index == 2 %}
+                                        <div class="team__avatar-2__shape-1">
+                                            <svg width="255" height="128" viewBox="0 0 255 128" fill="none"><path d="M85 128C85 104.539 66.185 85.5 43 85.5V43H85C85 66.461 103.815 85.5 127 85.5V128H85Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M213 85.5C189.263 85.5 170 104.539 170 128H127V85.5C150.737 85.5 170 66.461 170 43H213V85.5Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M43 43.2428V85C19.263 85 0 66.185 0 43H43V43.2428Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M42.7514 43H0C0 19.263 19.263 0 43 0V43H42.7514Z" fill="#EFA33B" fill-opacity="0.25"/><path d="M213 127.751L213 85C236.185 85 255 104.263 255 128L213 128L213 127.751Z" fill="#EFA33B" fill-opacity="0.25"/></svg>
+                                        </div>
+                                    {% endif %}
+                                    {% if index == 3 %}
+                                        <div class="team__avatar-2__shape-2">
+                                            <svg width="172" height="172" viewBox="0 0 172 172" fill="none"><path d="M72.3024 114.49C95.5903 106.388 121.064 118.711 129.166 141.999L171.352 127.322L156.675 85.136C133.387 93.2379 107.914 80.9142 99.8121 57.6263L57.6256 72.3031L72.3024 114.49Z" fill="#F7E3C7"/><path d="M57.5412 72.0591L42.9492 30.1164C19.6613 38.2183 7.33759 63.6918 15.4395 86.9797L57.626 72.3029L57.5412 72.0591Z" fill="#F7E3C7"/><path d="M57.3821 72.3879L15.4395 86.9798C23.5414 110.268 49.0148 122.591 72.3028 114.49L57.626 72.303L57.3821 72.3879Z" fill="#F7E3C7"/><path d="M57.9305 72.1969L99.8731 57.605C91.7102 34.3383 66.2977 21.9934 42.9489 30.1165L57.6256 72.303L57.9305 72.1969Z" fill="#F7E3C7"/></svg>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                                <div class="team__info-2">
+                                    <h3>{{ item.team.title }}</h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div> #}
+    </div>
+</section>
+<div id="js-team-popup" class="team-popup hide" data-nonce="{{ get_single_team_nonce }}">
+    <div id="js-team-popup-lds-ripple" class="lds-ripple"><div></div><div></div></div>
+    <div id="js-team-popup__container" class="team-popup__container hide">
+        <div class="team-popup__wrapper">
+            <div id="js-team-popup__close" class="team-popup__close">
+                <svg viewBox="-285 377 40 40"><path fill="#40928B" d="M-265,414.5c4.6,0,9.1-1.8,12.4-5.1c3.3-3.3,5.1-7.7,5.1-12.4s-1.8-9.1-5.1-12.4c-3.3-3.3-7.7-5.1-12.4-5.1s-9.1,1.8-12.4,5.1c-3.3,3.3-5.1,7.7-5.1,12.4s1.8,9.1,5.1,12.4C-274.1,412.7-269.6,414.5-265,414.5z M-265,377c5.3,0,10.4,2.1,14.1,5.9c3.8,3.8,5.9,8.8,5.9,14.1s-2.1,10.4-5.9,14.1c-3.8,3.8-8.8,5.9-14.1,5.9s-10.4-2.1-14.1-5.9c-3.8-3.8-5.9-8.8-5.9-14.1s2.1-10.4,5.9-14.1C-275.4,379.1-270.3,377-265,377z"/><path fill="#40928B" d="M-262.2,397.5l5.7-5.7c0.3-0.3,0.4-0.7,0.4-1.1c0-0.4-0.2-0.8-0.5-1.1c-0.3-0.3-0.7-0.5-1.1-0.5c-0.4,0-0.8,0.1-1.1,0.4l0,0l-5.7,5.7l-5.7-5.7c-0.3-0.3-0.7-0.4-1.1-0.4c-0.4,0-0.8,0.2-1.1,0.5c-0.3,0.3-0.5,0.7-0.5,1.1c0,0.4,0.1,0.8,0.4,1.1l0,0l5.7,5.7l-5.7,5.7c-0.2,0.1-0.3,0.3-0.4,0.5c-0.1,0.2-0.1,0.4-0.1,0.6c0,0.2,0,0.4,0.1,0.6c0.1,0.2,0.2,0.4,0.4,0.5c0.2,0.2,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.1,0.6,0.1c0.2,0,0.4-0.1,0.6-0.1c0.2-0.1,0.4-0.2,0.5-0.4l0,0l5.7-5.7l5.7,5.7c0.1,0.2,0.3,0.3,0.5,0.4c0.2,0.1,0.4,0.1,0.6,0.1s0.4,0,0.6-0.1c0.2-0.1,0.4-0.2,0.5-0.4s0.3-0.3,0.4-0.5c0.1-0.2,0.1-0.4,0.1-0.6c0-0.2-0.1-0.4-0.1-0.6c-0.1-0.2-0.2-0.4-0.4-0.5l0,0L-262.2,397.5z"/></svg>
+            </div>
+            <div id="js-team-popup__row" class="team-popup__row"></div>
+        </div>
+    </div>
+</div>

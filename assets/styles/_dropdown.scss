@@ -1,0 +1,40 @@
+.thinkbio__dropdown{
+    font-size: 13px;
+    line-height: 1.54;
+    font-weight: $font-weight-bold;
+    color: $color-blue;
+    position: relative;
+}
+
+.thinkbio__dropdown-label{
+    border: 1px solid $color-blue;
+    border-radius: 83px;
+    padding: 10px 12px 8px;
+    position: relative;
+    cursor: pointer;
+    user-select: none;
+    height: 40px;
+
+    &::after{
+        position: absolute;
+        top: 18px;
+        right: 15px;
+        content: '';
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 6px 6px 0 5px;
+        border-color: $color-blue transparent transparent transparent;
+    }
+}
+
+.thinkbio__dropdown-list{
+    position: absolute;
+    left: 0;
+    top: 40px;
+    right: 0;
+}
+
+.thinkbio__dropdown-list-item{
+    padding: 10px 13px 8px;
+}

@@ -1,0 +1,33 @@
+.science-green {
+  background-color: $color-green;
+  padding: 120px 40px;
+}
+
+.science-green__inner {
+  margin: 0 auto;
+  max-width: 1000px;
+
+  p {
+    color: $color-black-1;
+    font-size: 40px;
+    font-weight: $font-weight-semibold;
+    line-height: 1.25;
+  }
+
+  p+p {
+    margin-top: 50px;
+  }
+}
+
+@media(max-width: $breakpoint-mobile-start) {
+  .science-green {
+    padding: 48px 40px 27px;
+  }
+
+  .science-green__inner {
+    p {
+      font-size: 25px;
+      line-height: 1.4;
+    }
+  }
+}

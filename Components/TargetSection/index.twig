@@ -1,0 +1,26 @@
+<section id="targets-of-interest" class="target">
+    <div class="target__circle"></div>
+    <div class="target__container">
+        <div class="target__title">
+            <h2>{{ title }}</h2>
+        </div>
+        <div class="target__row">
+            {% for index, item in info_list %}
+                <div class="target__col target__col-{{ index }}">
+                    <div class="target__img">
+                        <img
+                            class="lazyload"
+                            data-src="{{ item.image.src }}"
+                            data-sizes="auto"
+                            alt="{{ item.image.alt|e }}"
+                        />
+                    </div>
+                    <div class="target__info">
+                        <h3>{{ item.title }}</h3>
+                        <p>{{ item.content }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

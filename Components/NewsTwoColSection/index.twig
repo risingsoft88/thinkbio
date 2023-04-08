@@ -1,0 +1,51 @@
+<section class="news-two">
+    <div class="news__container">
+        <div class="news-two__shape-1">
+            <svg width="84" height="209" viewBox="0 0 84 209" fill="none"><path d="M84 125.5C60.815 125.5 42 144.091 42 167H0V125.5C23.185 125.5 42 106.909 42 84H84V125.5Z" fill="#5DD597"/><path d="M42 84C42 60.815 23.185 42 0 42V0H42C42 23.185 60.815 42 84 42V84H42Z" fill="#99E3E2"/><path d="M0.242767 167H42C42 190.185 23.185 209 0 209V167H0.242767Z" fill="#5DD597"/></svg>
+        </div>
+        <div class="news-two__shape-2">
+            <svg width="218" height="218" viewBox="0 0 218 218" fill="none"><path d="M218 109C157.829 109 109 60.1705 109 0H0V109C60.1705 109 109 157.829 109 218H218V109Z" fill="#99E3E2"/></svg>
+        </div>
+        <div class="news-two__mobile-shape-1">
+            <svg width="106" height="63" viewBox="0 0 106 63" fill="none"><path d="M-21.2092 0C-21.2092 17.3887 -35.4507 31.5 -53 31.5V63H-21.2092C-21.2092 45.6113 -6.96764 31.5 10.5816 31.5V0H-21.2092Z" fill="#99E3E2"/><path d="M74.2091 31.5C56.6598 31.5 42.4183 17.3887 42.4183 0H10.6274V31.5C28.1767 31.5 42.4183 45.6113 42.4183 63H74.2091H74.3928H106C106 45.6113 91.7583 31.5 74.2091 31.5Z" fill="#5DD597"/></svg>
+        </div>
+        <div class="news__row">
+            {% for index, item in news %}
+                <div class="news__col">
+                    <a href="{{ item.meta('external_link') }}">
+                        <div class="news__inner">
+                            <div class="news__shape">
+                                <svg width="40" height="40" viewBox="0 0 40 40" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M20 37.5C24.6413 37.5 29.0925 35.6563 32.3744 32.3744C35.6563 29.0925 37.5 24.6413 37.5 20C37.5 15.3587 35.6563 10.9075 32.3744 7.62563C29.0925 4.34374 24.6413 2.5 20 2.5C15.3587 2.5 10.9075 4.34375 7.62563 7.62563C4.34374 10.9075 2.5 15.3587 2.5 20C2.5 24.6413 4.34374 29.0925 7.62563 32.3744C10.9075 35.6563 15.3587 37.5 20 37.5ZM20 -8.74228e-07C25.3043 -1.10609e-06 30.3914 2.10713 34.1421 5.85786C37.8929 9.60859 40 14.6957 40 20C40 25.3043 37.8929 30.3914 34.1421 34.1421C30.3914 37.8929 25.3043 40 20 40C14.6957 40 9.60859 37.8929 5.85786 34.1421C2.10714 30.3914 -6.42368e-07 25.3043 -8.74228e-07 20C-1.10609e-06 14.6957 2.10714 9.60859 5.85786 5.85786C9.60859 2.10714 14.6957 -6.42368e-07 20 -8.74228e-07ZM11.25 18.75C10.9185 18.75 10.6005 18.8817 10.3661 19.1161C10.1317 19.3505 10 19.6685 10 20C10 20.3315 10.1317 20.6495 10.3661 20.8839C10.6005 21.1183 10.9185 21.25 11.25 21.25L25.7325 21.25L20.365 26.615C20.1303 26.8497 19.9984 27.1681 19.9984 27.5C19.9984 27.8319 20.1303 28.1503 20.365 28.385C20.5997 28.6197 20.9181 28.7516 21.25 28.7516C21.5819 28.7516 21.9003 28.6197 22.135 28.385L29.635 20.885C29.7514 20.7689 29.8438 20.6309 29.9068 20.4791C29.9698 20.3272 30.0022 20.1644 30.0022 20C30.0022 19.8356 29.9698 19.6728 29.9068 19.5209C29.8438 19.3691 29.7514 19.2311 29.635 19.115L22.135 11.615C21.9003 11.3803 21.5819 11.2484 21.25 11.2484C20.9181 11.2484 20.5997 11.3803 20.365 11.615C20.1303 11.8497 19.9984 12.1681 19.9984 12.5C19.9984 12.8319 20.1303 13.1503 20.365 13.385L25.7325 18.75L11.25 18.75Z" fill="#40928B"/></svg>
+                            </div>
+                            <div class="news__logo">
+                                <img
+                                    class="lazyload"
+                                    src="{{ placeholderImage(item.meta('logo').width / 2, item.meta('logo').height / 2) }}"
+                                    data-src="{{ item.meta('logo').src|resizeDynamic(item.meta('logo').width / 2, item.meta('logo').height / 2) }}"
+                                    data-srcset="{{ item.meta('logo').src|resizeDynamic(item.meta('logo').width / 2, item.meta('logo').height / 2) }} 1x, {{ item.meta('logo').src|resizeDynamic(item.meta('logo').width, item.meta('logo').height) }} 2x"
+                                    data-sizes="auto"
+                                    alt="{{ item.meta('logo').alt|e }}"
+                                />
+                            </div>
+                            <div class="news__title">
+                                <h2>{{ item.title }}</h2>
+                            </div>
+                            <div class="news__date">{{ item.meta('date') }}</div>
+                        </div>
+                    </a>
+                    {% if index == 2 %}
+                        <div class="news-two__shape-3">
+                            <svg width="115" height="231" viewBox="0 0 115 231" fill="none"><path d="M115 114.335L115 0C51.5174 -2.77491e-06 5.3775e-06 51.5173 2.60258e-06 115L115 115L115 114.335Z" fill="#99E3E2"/><path d="M114.335 115L7.62939e-06 115C4.83035e-06 179.035 51.5174 231 115 231L115 115L114.335 115Z" fill="#99E3E2"/></svg>
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        {# <div class="news__link">
+            <a href="{{ link.url }}">{{ link.title }}</a>
+        </div> #}
+        <div class="news-two__mobile-shape-2">
+            <svg width="86" height="112" viewBox="0 0 86 112" fill="none"><path d="M112 56C81.0867 56 56 30.9133 56 0H0V56C30.9133 56 56 81.0867 56 112H112V56Z" fill="#99E3E2"/></svg>
+        </div>
+    </div>
+</section>

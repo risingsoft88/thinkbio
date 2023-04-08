@@ -1,0 +1,150 @@
+.science-hero {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  min-height: 800px;
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.science-hero__mask {
+  background-color: rgba($color-black, 0.4);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.science-shape_1 {
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.science-shape_2 {
+  bottom: 0;
+  display: flex;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.science-hero__info {
+  max-width: 580px;
+
+  h1 {
+    color: $color-white;
+    font-size: 64px;
+    line-height: 1.125;
+  }
+
+  p {
+    color: $color-white;
+    font-size: 16px;
+    line-height: 1.75;
+    margin-top: 20px;
+  }
+}
+
+.science-hero__btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 30px;
+}
+
+.science-content {
+  padding: 100px 40px 120px;
+}
+
+.science-content__inner {
+  margin: 0 auto;
+  max-width: 930px;
+
+  h2 {
+    color: $color-black-1;
+    font-size: 30px;
+    line-height: 2;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: $color-gray;
+    font-size: 16px;
+    font-weight: $font-weight-light;
+    line-height: 1.75;
+  }
+
+  p+p {
+    margin-top: 28px;
+  }
+}
+
+.science-shape_mobile {
+  bottom: -15px;
+  display: flex;
+  display: none;
+  position: absolute;
+  right: -5px;
+  z-index: 2;
+}
+
+@media(max-width: $breakpoint-mobile-start) {
+  .science-hero {
+    background-attachment: initial;
+
+    .container {
+      display: block;
+      padding-top: 210px;
+    }
+  }
+
+  .science-hero__info {
+    h1 {
+      font-size: 44px;
+      line-height: 1.18;
+    }
+  }
+
+  .science-shape_1 {
+    display: none;
+  }
+  
+  .science-shape_2 {
+    display: none;    
+  }
+
+  .science-shape_mobile {
+    display: block;
+  }
+
+  .science-content {
+    padding: 64px 40px 45px;
+  }
+
+  .science-content__inner {
+    h2 {
+      font-size: 32px;
+      line-height: 1.25;
+      margin-bottom: 52px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.71;
+    }
+  }
+}

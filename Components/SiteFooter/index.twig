@@ -1,0 +1,33 @@
+<footer class="footer">
+  <div class="footer-row">
+    <div class="footer-logo">
+      <a href="{{ site.link }}"><img src="{{ logo.src }}" alt="{{ logo.alt }}"></a>
+    </div>
+    <div class="footer-widget-row">
+      <div class="footer-widget footer-widget--first">
+        <h3>Contact Details</h3>
+        <div class="footer-contact-info">
+          <p>{{address}}</p>
+          <p><a href="mailto:{{email}}">{{email}}</a></p>
+        </div>
+        <div class="footer-linked">
+          <a href="{{ linkedin_url }}">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path class="footer-linked-circle" fill-rule="evenodd" clip-rule="evenodd" d="M18 36C27.9411 36 36 27.9411 36 18C36 8.05887 27.9411 0 18 0C8.05887 0 0 8.05887 0 18C0 27.9411 8.05887 36 18 36Z" fill="#40928B"/><path fill-rule="evenodd" clip-rule="evenodd" d="M25.5 24H22.418V18.7506C22.418 17.3114 21.8711 16.5071 20.7319 16.5071C19.4927 16.5071 18.8452 17.3441 18.8452 18.7506V24H15.875V14H18.8452V15.347C18.8452 15.347 19.7383 13.6945 21.8604 13.6945C23.9814 13.6945 25.5 14.9898 25.5 17.6686V24ZM12.3315 12.6906C11.3198 12.6906 10.5 11.8643 10.5 10.8453C10.5 9.82626 11.3198 9 12.3315 9C13.3433 9 14.1626 9.82626 14.1626 10.8453C14.1626 11.8643 13.3433 12.6906 12.3315 12.6906ZM10.7979 24H13.895V14H10.7979V24Z" fill="white"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-widget">
+        <h3>{{ footer_menu_1.title }}</h3>
+        <nav class="footer-nav">
+          <ul>
+            {% for item in footer_menu_1.items %}
+              <li class="{{ item.classes | join(' ') }}">
+                <a href="{{ item.link }}">{{ item.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer>

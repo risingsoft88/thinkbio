@@ -1,0 +1,134 @@
+.about-hero {
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  min-height: 800px;
+  overflow: hidden;
+  position: relative;
+
+  .container {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    position: relative;
+    z-index: 9;
+  }
+}
+
+.about-hero__mask-0 {
+  background-color: rgba($color-black, 0.4);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.about-hero__mask-1 {
+  bottom: -5px;
+  display: flex;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+.about-hero__mask-2 {
+  bottom: -5px;
+  display: flex;
+  position: absolute;
+  right: 0;
+  z-index: 3;
+}
+
+.about-hero__info {
+  max-width: 650px;
+
+  h1 {
+    color: $color-white;
+    font-size: 64px;
+    line-height: 1.125;
+  }
+  
+  p {
+    color: $color-white;
+    font-size: 16px;
+    line-height: 1.75;
+    margin-top: 17px;
+  }
+}
+
+.about-hero__btn {
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 36px;
+
+  span {
+    display: flex;
+  }
+}
+
+.about-hero__mask-1--mobile {
+  bottom: 180px;
+  display: none;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+}
+
+.about-hero__mask-2--mobile {
+  bottom: -5px;
+  display: none;
+  left: 0;
+  position: absolute;
+  z-index: 2;
+}
+
+@media(max-width : 1400px) {
+  .about-hero__mask-2 {
+    right: -400px;
+  }
+}
+
+@media(max-width : $breakpoint-mobile-start) {
+  .about-hero {
+    background-attachment: initial;
+  }
+
+  .about-hero__mask-1 {
+    display: none;
+  }
+  
+  .about-hero__mask-2 {
+    display: none;
+  }
+
+  .about-hero__info {
+    margin-top: 125px;
+    
+    h1 {
+      font-size: 44px;
+      line-height: 1.18;
+    }
+  }
+
+  .about-hero__btn {
+    margin-top: 24px;
+  }
+
+  .about-hero {
+    .container {
+      display: block;
+    }
+  }
+
+  .about-hero__mask-1--mobile {
+    display: flex;
+  }
+  
+  .about-hero__mask-2--mobile {
+    display: flex;
+  }
+}

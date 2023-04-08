@@ -1,0 +1,269 @@
+.join-us {
+  overflow: hidden;
+  padding: 100px 0 200px;
+  position: relative;
+}
+
+.join-us__shape {
+  bottom: 0;
+  display: flex;
+  position: absolute;
+  right: 0;
+  z-index: 1;
+}
+
+.join-us__container {
+  margin: 0 auto;
+  max-width: 750px;
+  position: relative;
+  z-index: 2;
+}
+
+.join-us__title {
+  text-align: center;
+
+  h2 {
+    color: $color-black-1;
+    font-size: 40px;
+    line-height: 1.25;
+  }
+
+  p {
+    color: $color-black;
+    font-size: 16px;
+    font-weight: $font-weight-light;
+    line-height: 1.75;
+    margin-top: 20px;
+  }
+}
+
+.join-us__form {
+  margin: 24px auto 0;
+  max-width: 590px;
+
+  .gform_confirmation_message {
+    text-align: center;
+  }
+
+  .gform_submission_error {
+    color: $color-red;
+    font-size: 16px;
+  }
+  
+  .validation_message {
+    color: $color-red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+
+  .ginput_preview {
+    font-size: 14px;
+
+    strong {
+      font-weight: $font-weight-normal;
+    }
+  }
+
+  .gform_delete_file {
+    background-color: #fbe8ce;
+    border: 1px dashed #efa33b;
+    border-radius: 15px;
+    cursor: pointer;
+    padding: 7px 20px 7px 40px;
+    position: relative;
+
+    .dashicons {
+      left: 12px;
+      position: absolute;
+      top: 4px;
+    }
+  }
+
+  .gform_fields {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+
+  .gfield {
+    padding: 15px;
+    width: 100%;
+
+    &.hidden_label {
+      .gfield_label {
+        display: none;
+      }
+    }
+  }
+
+  .join-us__col-2 {
+    width: 50%;
+  }
+
+  .ginput_container {
+    margin-top: 5px;
+
+    input[type=text] {
+      border: 1px solid #c7c7c7;
+      border-radius: 30px;
+      font-family: $font-sub-family;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      padding: 15px;
+      width: 100%;
+    }
+
+    textarea {
+      border: 1px solid #c7c7c7;
+      border-radius: 30px;
+      font-family: $font-sub-family;
+      font-size: 14px;
+      margin: 0;
+      padding: 0;
+      padding: 15px;
+      resize: none;
+      width: 100%;
+    }
+  }
+
+  .gfield_label {
+    color: $color-black;
+    font-size: 16px;
+    font-weight: $font-weight-semibold;
+    line-height: 1.5;
+  }
+
+  .gfield_required {
+    &::before {
+      content: '*';
+    }
+  }
+
+  .gfield_required_text {
+    display: none;
+  }
+
+  .gform_footer {
+    padding-top: 15px;
+    text-align: center;
+
+    input[type=submit] {
+      background-color: $color-blue;
+      border: 0;
+      border-radius: 20px;
+      color: $color-white;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: $font-weight-semibold;
+      padding: 12px 16px 10px;
+      transition: background-color 0.2s ease-out;
+
+      &:hover {
+        background-color: $color-brown;
+      }
+    }
+  }
+
+  .file-upload-filed {
+    position: relative;
+
+    label {
+      background-color: #fbe8ce;
+      border: 1px dashed #efa33b;
+      border-radius: 30px;
+      color: $color-black;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 16px;
+      padding: 30px 0;
+      text-align: center;
+      width: 100%;
+    }
+
+    input[type=file] {
+      cursor: pointer;
+      height: 86px;
+      left: 15px;
+      // background-color: rgba(255,0,0,0.2);
+      opacity: 0;
+      position: absolute;
+      top: 15px;
+      width: 590px;
+    }
+
+    .gform_fileupload_rules {
+      display: none;
+    }
+  }
+
+  .ginput_recaptcha {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.join-us__shape-mobile-1 {
+  display: none;
+  left: -10px;
+  position: absolute;
+  top: 0;
+}
+
+.join-us__shape-mobile-2 {
+  display: none;
+  margin-top: -25px;
+  position: absolute;
+  right: 0;
+}
+
+@media(max-width: $breakpoint-mobile-start) {
+  .join-us {
+    padding: 26px 40px;
+  }
+
+  .join-us__shape {
+    display: none;
+  }
+
+  .join-us__title {
+    h2 {
+      font-size: 32px;
+      line-height: 1.25;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.71;
+      margin-top: 12px;
+    }
+  }
+
+  .join-us__form {
+    margin: 26px auto 0;
+
+    .gfield {
+      padding: 0;
+    }
+
+    .gfield + .gfield {
+      margin-top: 25px;
+    }
+
+    .gform_fields {
+      margin: 0;
+    }
+
+    .join-us__col-2 {
+      width: 100%;
+    }
+  }
+
+  .join-us__shape-mobile-2 {
+    display: block;
+  }
+
+  .join-us__shape-mobile-1 {
+    display: flex;
+  }
+}

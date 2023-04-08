@@ -1,0 +1,43 @@
+<header class="header">
+  <div class="container">
+    <div class="header-row">
+      <div class="header-logo">
+        <a href="{{ site.link }}">
+          <div id="js-header-logo__svg" class="header-logo__svg">
+            {% if post.header_white %}
+              {% include 'Assets/logo-white.svg' %}
+            {% else %}
+              {% include 'Assets/logo.svg' %}
+            {% endif %}
+          </div>
+        </a>
+      </div>
+      <div id="js-header-mobile-btn" class="header-mobile-btn {% if post.header_white %}header-mobile-btn--white{% endif %}"><span></span></div>
+      <div id="js-header-nav" class="header-nav">
+        <nav class="header-menu {% if post.header_white %} header-menu--white {% endif %}">
+          <ul>
+            {% for item in header_menu.items %}
+              <li class="{{ item.classes | join(' ') }}">
+                <a href="{{ item.link }}">{{ item.title }}</a>
+                {% if item.children %}
+                  <div class="header-menu__sub">
+                    <ul>
+                      {% for index, child in item.children %}
+                        <li class="js-header-submenu header-menu__sub-{{ index + 1 }} {{ child.classes | join(' ') }}">
+                          <a href="{{ child.link }}">{{ child.title }}</a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+        </nav>
+        <div class="header-right">
+          <a href="{{ header_right_link.url }}">{{ header_right_link.title }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

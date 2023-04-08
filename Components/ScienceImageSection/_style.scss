@@ -1,0 +1,50 @@
+.science-image {
+  background-attachment: fixed;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 560px;
+  overflow: hidden;
+  position: relative;
+}
+
+.science-image__mask-0 {
+  background-color: rgba($color-black, 0.4);
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.science-image__mask {
+  display: flex;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+.science-image__mask--mobile {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 2;
+}
+
+@media(max-width: $breakpoint-mobile-start) {
+  .science-image {
+    background-attachment: initial;
+    height: 175px;
+  }
+
+  .science-image__mask {
+    display: none;
+  }
+
+  .science-image__mask--mobile {
+    display: flex;
+  }
+}
